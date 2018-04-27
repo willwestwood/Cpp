@@ -1,7 +1,7 @@
 #ifndef singlylinkedlist_h
 #define singlylinkedlist_h
 
-namespace Containers
+namespace containers
 {
 
 	template <class T> class SinglyLinkedList
@@ -18,10 +18,10 @@ namespace Containers
 	public:
 		SinglyLinkedList();
 		bool Add(T value);
-		bool AddToStart(T data);
-		bool Add(T data, int pos);
-		bool Remove(T data);
-		bool Remove(T data, int pos);
+		bool AddToStart(T value);
+		bool Add(T value, int pos);
+		bool Remove(T value);
+		bool Remove(int pos);
 		int Size();
 		T Get(int pos);
 		T GetStart();

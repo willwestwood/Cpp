@@ -2,6 +2,8 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 
+void printList(containers::SinglyLinkedList<std::string> & sll);
+
 int main()
 {
 	/*std::list<std::string> l;
@@ -12,17 +14,38 @@ int main()
 	l.push_back("test");
 	for (auto i = l.begin(); i != l.end();)
 	{
-		std::string * s = NULL;
-		s = new std::string(*(i++));
-		std::cout << (*s).c_str() << std::endl;
+	std::string * s = NULL;
+	s = new std::string(*(i++));
+	std::cout << (*s).c_str() << std::endl;
 	}*/
 
-	Containers::SinglyLinkedList<std::string> sll;
+	containers::SinglyLinkedList<std::string> sll;
 	sll.Add("this");
 	sll.Add("is");
 	sll.Add("a");
 	sll.Add("string");
 	sll.Add("test");
+	printList(sll);
+
+	//sll.Add("insert", 2);
+
+	//printList(sll);
+
+	//sll.Remove(2);
+
+	//printList(sll);
+
+	sll.Remove("is");
+
+	printList(sll);
+
+	std::cout << sll.Size() << std::endl;
+
+	return 0;
+}
+
+void printList(containers::SinglyLinkedList<std::string> & sll)
+{
 	for (auto i = sll.begin(); i != sll.end();)
 	{
 		std::string * s = NULL;
@@ -31,5 +54,5 @@ int main()
 		delete s;
 	}
 
-	return 0;
+	std::cout << std::endl;
 }
